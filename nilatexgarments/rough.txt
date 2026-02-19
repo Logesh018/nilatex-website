@@ -1,0 +1,27 @@
+I need your help in modifying my code.
+
+Currently I am building a website for a client.
+
+
+
+The issue is I written all the styles in the "index.css" file.
+
+There is no issue but index.css already reached 700 lines and I am only finished 2 sections Hero and Products.
+
+There are plenty more and the index.css is only going to get bigger which will hard to maintain in the future.
+
+
+
+What I want is:
+
+Tailwind in JSX for all component-specific styles. Keep index.css only for what Tailwind can't do — CSS variables, keyframe animations, and the truly global navbar/hero classes that are already there.
+
+
+
+So all of our styles will be the same but it is written in JSX so that it is easy to maintain.
+
+
+
+I will share you the files.
+Think deeply and adjust & modify the code.
+The most important rule "The UI, padding, colors and everything has to be the same. It's just that it is written in a different way which is easy to maintain.

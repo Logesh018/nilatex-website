@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* ─── CSS Variables ─────────────────────────────── */
+:root {
+  --navy: #02123a;
+  --navy-mid: #063476;
+  --blue-accent: #4da6ff;
+  --blue-light: #93d0ff;
+}
+
+/* ─── Global Reset ──────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--navy);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Keyframes ─────────────────────────────────── */
+
+/* Shimmer for highlight word gradient */
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Pulse glow for badge dot (Tailwind's animate-pulse is fine but adding a glow variant) */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 4px 1px rgba(77, 166, 255, 0.6);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 10px 3px rgba(77, 166, 255, 0.9);
+    opacity: 0.7;
+  }
+}
+
+/* Underline slide in (used via inline styles in Hero) */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar scroll bar indicator underline */
+.nav-link-underline {
+  transition: width 0.3s ease;
+}
