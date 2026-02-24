@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "../assets/nila_logo_upscaled.png"
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -6,7 +7,7 @@ const navLinks = [
   { label: "Infrastructure", href: "#infrastructure" },
   { label: "About Us", href: "#about" },
   { label: "Contact Us", href: "#contact" },
-  { label: "Certificates", href: "#certificates" },
+  { label: "Certifications", href: "#certifications" },
 ];
 
 export default function Navbar() {
@@ -30,12 +31,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3 group flex-shrink-0">
+        <a href="#home" className="flex items-center gap-3 group shrink-0">
           <div className="relative w-11 h-11">
             <img
-              src="/nila_logo_upscaled.png"
+              src={logo}
               alt="Nila Texgarments Logo"
-              className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(30,144,255,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(30,144,255,0.8)] transition-all duration-300"
+              className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(30,144,255,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(30,144,255,0.8)] transition-all duration-300 rounded-4xl"
             />
           </div>
           <div className="flex flex-col leading-tight">
@@ -67,7 +68,7 @@ export default function Navbar() {
               >
                 {link.label}
                 <span
-                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#4da6ff] rounded-full transition-all duration-300
+                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-[#4da6ff] rounded-full transition-all duration-300
                     ${active === link.label ? "w-4/5" : "w-0 group-hover:w-4/5"}`}
                 />
               </a>
@@ -77,18 +78,18 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden flex flex-col gap-[5px] p-2 focus:outline-none"
+          className="lg:hidden flex flex-col gap-1.25 p-2 focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-6 h-[2px] bg-white rounded transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`}
+            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-1.75" : ""}`}
           />
           <span
-            className={`block w-6 h-[2px] bg-white rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
+            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`block w-6 h-[2px] bg-white rounded transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
+            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "-rotate-45 translate-y-1.75" : ""}`}
           />
         </button>
       </div>

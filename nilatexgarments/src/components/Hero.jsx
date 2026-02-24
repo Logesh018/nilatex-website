@@ -166,14 +166,14 @@ export default function Hero() {
                   }}
                 >
                   {slide.headline[1]}
-                  <span
-                    className="absolute left-0 -bottom-1 h-[3px] rounded-full"
+                  {/* <span
+                    className="absolute left-0 -bottom-1 h-0.75 rounded-full"
                     style={{
                       background: "linear-gradient(90deg,#4da6ff,#a8d8ff)",
                       width: textVisible ? "100%" : "0%",
                       transition: "width 0.75s ease 0.75s",
                     }}
-                  />
+                  /> */}
                 </span>
               </span>
             </h1>
@@ -204,7 +204,7 @@ export default function Hero() {
                   key={i}
                   className="flex items-center gap-2.5 px-4 py-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"
                 >
-                  <span className="text-lg leading-none flex-shrink-0">{s.icon}</span>
+                  <span className="text-lg leading-none shrink-0">{s.icon}</span>
                   <span
                     className="text-gray-200 text-xs sm:text-[13px] font-medium leading-snug"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
@@ -230,8 +230,8 @@ export default function Hero() {
               <span
                 className={`block rounded-full transition-all duration-300 ${
                   i === current
-                    ? "w-[3px] h-8 bg-[#4da6ff]"
-                    : "w-[3px] h-4 bg-white/30 group-hover:bg-white/60"
+                    ? "w-0.75 h-8 bg-[#4da6ff]"
+                    : "w-0.75 h-4 bg-white/30 group-hover:bg-white/60"
                 }`}
               />
             </button>

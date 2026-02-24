@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 
 const PROCESSES = [
   {
@@ -62,7 +62,7 @@ function ProcessCard({ item, index }) {
           alt={item.title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
       </div>
 
       {/* Content */}
@@ -77,7 +77,7 @@ function ProcessCard({ item, index }) {
 
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="mt-auto pt-5 flex items-center gap-2 text-[0.72rem] font-bold uppercase tracking-widest text-[#1d8fcf] hover:text-[#0a55a0] transition-colors"
+          className="mt-auto pt-5 flex items-center gap-2 text-[0.72rem] font-bold uppercase tracking-widest text-[#1d8fcf] hover:text-[#0a55a0] transition-colors smooth delay-100"
         >
           {isExpanded ? "Read Less" : "Read More"}
           <svg 
@@ -95,7 +95,7 @@ function ProcessCard({ item, index }) {
 export default function Infrastructure() {
   return (
     <section id="infrastructure" className="bg-[#fcfdfe] py-20 px-6 lg:px-16">
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-300">
         
         {/* Header */}
         <div className="mb-16 text-center justify-center">
