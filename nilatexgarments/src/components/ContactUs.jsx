@@ -73,11 +73,11 @@ const ContactUs = () => {
     <section id="contact" className="relative w-full py-20 overflow-hidden bg-[#fcfdfe]">
       {/* Background blobs */}
       <div
-        className="pointer-events-none absolute -top-20 right-0 w-[420px] h-[420px] rounded-full"
+        className="pointer-events-none absolute -top-20 right-0 w-105 h-105 rounded-full"
         style={{ background: "radial-gradient(circle, rgba(29,143,207,0.07) 0%, transparent 70%)", transform: "translateX(30%)" }}
       />
       <div
-        className="pointer-events-none absolute bottom-0 left-0 w-[360px] h-[360px] rounded-full"
+        className="pointer-events-none absolute bottom-0 left-0 w-90 h-90 rounded-full"
         style={{ background: "radial-gradient(circle, rgba(10,85,160,0.06) 0%, transparent 70%)", transform: "translateX(-30%)" }}
       />
 
