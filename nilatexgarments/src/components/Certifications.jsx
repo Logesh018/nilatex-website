@@ -31,21 +31,20 @@ const certificationBodies = [
     logo: null,
   },
 ];
-// ─────────────────────────────────────────────────────────────────────────────
 
 const Certifications = () => {
   return (
     <section className="relative w-full py-20 overflow-hidden bg-[#f8faff]">
       {/* Subtle blobs — same style as Products section */}
       <div
-        className="pointer-events-none absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full"
+        className="pointer-events-none absolute -top-20 -right-20 w-105 h-105 rounded-full"
         style={{
           background:
             "radial-gradient(circle, rgba(29,143,207,0.07) 0%, transparent 70%)",
         }}
       />
       <div
-        className="pointer-events-none absolute bottom-0 -left-16 w-[340px] h-[340px] rounded-full"
+        className="pointer-events-none absolute bottom-0 -left-16 w-85 h-85 rounded-full"
         style={{
           background:
             "radial-gradient(circle, rgba(10,85,160,0.06) 0%, transparent 70%)",
@@ -57,11 +56,11 @@ const Certifications = () => {
         {/* ── Section Heading — identical pattern to Products & Infrastructure ── */}
         <div className="mb-14 text-center">
           <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-0.5 w-10 bg-[#1d8fcf] rounded-sm" />
+            <span className="block h-0.5 w-10 rounded-sm bg-linear-to-r from-transparent to-[#38bdf8]" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#1d8fcf]">
               Recognised &amp; Certified
             </span>
-            <span className="h-0.5 w-10 bg-[#1d8fcf] rounded-sm" />
+            <span className="block h-0.5 w-10 rounded-sm bg-linear-to-l from-transparent to-[#38bdf8]" />
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-[#02123a]">
             Our <span className="text-[#1d8fcf]">Certifications</span>

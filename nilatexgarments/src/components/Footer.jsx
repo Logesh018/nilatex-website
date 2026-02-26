@@ -96,14 +96,14 @@ const Footer = () => {
     >
       {/* Top glow accent */}
       <div
-        className="absolute top-0 left-1/2 w-[700px] h-[2px] pointer-events-none"
+        className="absolute top-0 left-1/2 w-175 h-0.5 pointer-events-none"
         style={{
           background: "linear-gradient(to right, transparent, rgba(29,143,207,0.6), transparent)",
           transform: "translateX(-50%)",
         }}
       />
       <div
-        className="pointer-events-none absolute top-0 left-1/2 w-[600px] h-[200px] rounded-full"
+        className="pointer-events-none absolute top-0 left-1/2 w-150 h-50 rounded-full"
         style={{
           background: "radial-gradient(ellipse, rgba(29,143,207,0.06) 0%, transparent 70%)",
           transform: "translate(-50%, -60%)",

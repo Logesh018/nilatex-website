@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
-import logo from "../assets/nila_logo_upscaled.png"
+import { useState, useEffect, useRef } from "react";
+import logo from "../assets/nila_logo_upscaled.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
   { label: "Products", href: "#products" },
   { label: "Infrastructure", href: "#infrastructure" },
-  { label: "About Us", href: "#about" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Contact Us", href: "#contact" },
-  { label: "Certifications", href: "#certifications" },
+  { label: "Broucher", href: "#broucher" },
+  { label: "Certificates", href: "#certifications" },
 ];
 
 export default function Navbar() {
@@ -15,10 +17,38 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("Home");
 
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const equalizeWidths = () => {
+      if (!titleRef.current || !subtitleRef.current) return;
+
+      // Reset any previous transform so we measure natural width
+      subtitleRef.current.style.transform = "none";
+      subtitleRef.current.style.letterSpacing = "0.2em";
+
+      const titleW = titleRef.current.getBoundingClientRect().width;
+      const subtitleW = subtitleRef.current.getBoundingClientRect().width;
+
+      if (subtitleW === 0) return;
+
+      const scale = titleW / subtitleW;
+      subtitleRef.current.style.transform = `scaleX(${scale})`;
+      subtitleRef.current.style.transformOrigin = "left center";
+    };
+
+    // Run after fonts are likely loaded
+    equalizeWidths();
+    document.fonts.ready.then(equalizeWidths);
+    window.addEventListener("resize", equalizeWidths);
+    return () => window.removeEventListener("resize", equalizeWidths);
   }, []);
 
   return (
@@ -39,16 +69,28 @@ export default function Navbar() {
               className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(30,144,255,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(30,144,255,0.8)] transition-all duration-300 rounded-4xl"
             />
           </div>
-          <div className="flex flex-col leading-tight">
+
+          {/* overflow-hidden prevents subtitle from bleeding during scaleX */}
+          <div className="flex flex-col leading-tight overflow-hidden">
             <span
-              className="text-white font-black tracking-widest text-base sm:text-lg uppercase"
-              style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "0.12em" }}
+              ref={titleRef}
+              className="text-white font-black uppercase whitespace-nowrap"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                letterSpacing: "0.17em",
+                fontSize: "clamp(18px, 1.1vw, 18px)",
+              }}
             >
               Nila Texgarments
             </span>
             <span
-              className="text-[#4da6ff] text-[10px] sm:text-xs tracking-[0.2em] uppercase font-semibold"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
+              ref={subtitleRef}
+              className="text-[#4da6ff] font-semibold uppercase whitespace-nowrap inline-block mt-0.5"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "clamp(9px, 0.7vw, 11px)",
+                letterSpacing: "0.20em",
+              }}
             >
               Garments Manufacturer &amp; Supplier
             </span>
@@ -62,9 +104,9 @@ export default function Navbar() {
               <a
                 href={link.href}
                 onClick={() => setActive(link.label)}
-                className={`relative px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 group
+                className={`relative px-2 py-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 group
                   ${active === link.label ? "text-[#4da6ff]" : "text-gray-300 hover:text-white"}`}
-                style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "0.08em" }}
+                style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "0.05em" }}
               >
                 {link.label}
                 <span
@@ -82,22 +124,16 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span
-            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-1.75" : ""}`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "-rotate-45 translate-y-1.75" : ""}`}
-          />
+          <span className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-1.75" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-white rounded transition-all duration-300 ${menuOpen ? "-rotate-45 translate-y-1.75" : ""}`} />
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-400 ${
-          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <ul className="flex flex-col px-6 pb-4 pt-2 gap-1 border-t border-white/10 mt-2">

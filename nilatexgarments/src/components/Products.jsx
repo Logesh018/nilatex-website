@@ -1,18 +1,27 @@
 import { useEffect, useRef } from "react";
+import poloTshirt from "../assets/Products/polo_tshirt_upscaled.jpeg";
+import roundNeck from "../assets/Products/round-neck.png";
+import sweatShirt from "../assets/Products/sweat-shirt.jpeg";
+import hoodie from "../assets/Products/hoodie.png";
+import shorts from "../assets/Products/shorts.png";
+import trackPants from "../assets/Products/track-pants.jpeg";
+import jogger from "../assets/Products/jogger.jpeg";
+import sports from "../assets/Products/sports.jpeg";
+import sJersey from "../assets/Products/school_uniform.jpeg";
+import pTops from "../assets/Products/printed_tops.png";
+
 
 const PRODUCTS = [
-  { name: "Polo T-Shirts", image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=600&q=80&auto=format&fit=crop" },
-  { name: "Round Neck T-Shirt", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80&auto=format&fit=crop" },
-  { name: "Sweat Shirt", image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }, // Replaced broken URL
-  { name: "Hoodie", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9vZGllfGVufDB8fDB8fHww" },
-  { name: "Shorts", image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&q=80&auto=format&fit=crop" }, // Replaced broken URL
-  { name: "Track Pants", image: "https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?w=600&q=80&auto=format&fit=crop" },
-  { name: "Jogger", image: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&q=80&auto=format&fit=crop" },
-  { name: "School Sports Uniform", image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80&auto=format&fit=crop" },
-  { name: "Sports Jersey", image: "https://images.unsplash.com/photo-1580087256394-dc596e1c8f4f?w=600&q=80&auto=format&fit=crop" },
-  { name: "Corporate Uniform", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80&auto=format&fit=crop" },
-  { name: "Nurse & Scrubs", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&auto=format&fit=crop" },
-  { name: "Printed Tops", image: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&q=80&auto=format&fit=crop" },
+  { name: "Polo T-Shirts", image: poloTshirt },
+  { name: "Round Neck T-Shirt", image: roundNeck },
+  { name: "Sweat Shirt", image: sweatShirt },
+  { name: "Hoodie", image: hoodie },
+  { name: "Shorts", image: shorts },
+  { name: "Track Pants", image: trackPants },
+  { name: "Jogger", image: jogger },
+  { name: "School Sports Uniform", image: sJersey },
+  { name: "Sports Jersey", image: sports },
+  { name: "Printed Tops", image: pTops },
 ];
 
 const PRINT_METHODS = ["Logo Embroidery", "DTF Printing", "Vinyl Print", "Screen Print"];
@@ -60,35 +69,35 @@ export default function Products() {
         </div>
 
         <h2 className="mb-4 text-[clamp(2rem,4.5vw,3.2rem)] font-black leading-[1.1] text-[#02123a]">
-          Our Specialized <span className="text-[#1d8fcf]">Manufacturing</span> Products
+          Our Specialized <span className="text-[#1d8fcf]">Manufacturing</span>
         </h2>
 
         <p className="mx-auto max-w-130 text-[clamp(0.9rem,1.5vw,1.05rem)] font-normal leading-[1.75] text-[#5a7090]">
-          Factory-direct garments crafted with precision — from sportswear to corporate uniforms, built exactly to your specification.
+          Factory-direct garments crafted with precision — from sportswear to customized uniforms, built exactly to your specification.
         </p>
       </div>
 
       {/* ── Product grid ── */}
-      <div className="mx-auto grid max-w-300 grid-cols-2 gap-3 sm:gap-3.5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 xl:gap-5">
+      <div className="mx-auto grid max-w-300 grid-cols-2 gap-3 sm:gap-3.5 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 xl:gap-5">
         {PRODUCTS.map((product, i) => (
           <div
             key={product.name}
             data-card
-            className="group cursor-default overflow-hidden rounded-2xl border bg-white opacity-0 shadow-[0_2px_12px_rgba(10,60,130,0.07)] transition-all duration-350 translate-y-7 hover:shadow-[0_16px_40px_rgba(10,85,160,0.12)] border-cyan-700"
+            className="group cursor-default overflow-hidden rounded-2xl bg-white opacity-0 shadow-[0_2px_12px_rgba(10,60,130,0.07)] transition-all duration-350 translate-y-7 hover:shadow-[0_16px_40px_rgba(10,85,160,0.12)] border border-gray-200"
             style={{ transitionDelay: `${i * 50}ms` }}
           >
             {/* Image Wrap */}
-            <div className="relative aspect-3/4 w-full overflow-hidden bg-[#eef4fb]">
+            <div className="relative aspect-3/4 w-full overflow-hidden bg-[#efefef]">
               <img
                 src={product.image}
                 alt={product.name}
                 loading="lazy"
-                className="block h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                className="block h-full w-full object-contain scale-[1.01] transition-transform duration-600 ease-in-out group-hover:scale-[1.06]"
               />
             </div>
 
             {/* Name Bar */}
-            <div className="border-t border-[#1d8fcf14] bg-white p-2.5 text-center md:px-3.5 md:py-3">
+            <div className="border-t border-[#1d8fcf14] bg-gray-100 p-2.5 text-center md:px-3.5 md:py-3">
               <p className="text-[0.7rem] font-bold leading-[1.3] tracking-[0.01em] text-[#02123a] md:text-[0.8rem]">
                 {product.name}
               </p>

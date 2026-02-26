@@ -24,7 +24,7 @@ const Map = () => {
     <section className="relative w-full py-24 overflow-hidden bg-[#02123a]">
       {/* Background glow decorations */}
       <div
-        className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
+        className="absolute top-0 left-1/4 w-125 h-125 rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(circle, rgba(77,166,255,0.08) 0%, transparent 70%)",
@@ -32,7 +32,7 @@ const Map = () => {
         }}
       />
       <div
-        className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute bottom-0 right-1/4 w-150 h-150 rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(circle, rgba(6,52,118,0.35) 0%, transparent 70%)",
@@ -40,7 +40,7 @@ const Map = () => {
         }}
       />
       <div
-        className="absolute top-1/2 left-1/2 w-[800px] h-[400px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 w-200 h-100 rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(ellipse, rgba(77,166,255,0.04) 0%, transparent 70%)",
@@ -56,11 +56,11 @@ const Map = () => {
           </span>
 
           <div className="flex items-center gap-4 mb-5">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#4da6ff] opacity-60" />
+            <div className="h-px w-12 bg-linear-to-r from-transparent to-[#4da6ff] opacity-60" />
             <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
               Our Locations
             </h2>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#4da6ff] opacity-60" />
+            <div className="h-px w-12 bg-linear-to-l from-transparent to-[#4da6ff] opacity-60" />
           </div>
 
           <p className="text-[#93d0ff] text-base sm:text-lg max-w-xl leading-relaxed opacity-80">

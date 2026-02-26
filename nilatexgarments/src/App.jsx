@@ -18,7 +18,7 @@ function App() {
       <AboutUs />
       <Products />
       <Infrastructure />
-      <Map />
+      {/* <Map /> */}
       <Certifications />
       <Clients />
       <ContactUs />

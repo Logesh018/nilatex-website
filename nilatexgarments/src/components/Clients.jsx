@@ -43,12 +43,12 @@ import client6 from "../assets/clients/nila-client6.jpg"
 
 // ─── EDIT THIS ARRAY TO ADD / REMOVE CLIENTS ─────────────────────────────────
 const clients = [
-  { id: 1, name: "Prakasam",         logo: client1},
-  { id: 2, name: "Marudhham School", logo: client2},
-  { id: 3, name: "Prestige",         logo: client3},
-  { id: 4, name: "Aesthetix",        logo: client4},
-  { id: 5, name: "Sangeetha",        logo: client5},
-  { id: 6, name: "Skilled Answers",  logo: client6},
+  { id: 1, name: "Prakasam", logo: client1 },
+  { id: 2, name: "Marudhham School", logo: client2 },
+  { id: 3, name: "Prestige", logo: client3 },
+  { id: 4, name: "Aesthetix", logo: client4 },
+  { id: 5, name: "Sangeetha", logo: client5 },
+  { id: 6, name: "Skilled Answers", logo: client6 },
   // ── ADD MORE CLIENTS BELOW ──
   // { id: 7, name: "New Client", logo: newClient },
 ];
@@ -105,7 +105,7 @@ const MarqueeTrack = ({ items, direction = "left", speed = 32 }) => {
             <img
               src={client.logo}
               alt={client.name}
-              className="max-h-11 max-w-[120px] object-contain transition-all duration-300 group-hover:scale-105"
+              className="max-h-11 max-w-30 object-contain transition-all duration-300 group-hover:scale-105"
               title={client.name}
             />
           </div>
@@ -133,7 +133,7 @@ const Clients = () => {
       <section className="relative w-full py-20 overflow-hidden bg-[#fcfdfe]">
         {/* Subtle blobs — same palette as Infrastructure section */}
         <div
-          className="pointer-events-none absolute top-0 right-0 w-[380px] h-[380px] rounded-full"
+          className="pointer-events-none absolute top-0 right-0 w-95 h-95 rounded-full"
           style={{
             background:
               "radial-gradient(circle, rgba(29,143,207,0.06) 0%, transparent 70%)",
@@ -141,7 +141,7 @@ const Clients = () => {
           }}
         />
         <div
-          className="pointer-events-none absolute bottom-0 left-0 w-[320px] h-[320px] rounded-full"
+          className="pointer-events-none absolute bottom-0 left-0 w-[320px] h-80 rounded-full"
           style={{
             background:
               "radial-gradient(circle, rgba(10,85,160,0.05) 0%, transparent 70%)",
@@ -154,11 +154,11 @@ const Clients = () => {
           {/* ── Section Heading — identical pattern to Products & Infrastructure ── */}
           <div className="mb-14 text-center">
             <div className="mb-4 flex items-center justify-center gap-3">
-              <span className="h-0.5 w-10 bg-[#1d8fcf] rounded-sm" />
+              <span className="block h-0.5 w-10 rounded-sm bg-linear-to-r from-transparent to-[#38bdf8]" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#1d8fcf]">
                 Trusted By
               </span>
-              <span className="h-0.5 w-10 bg-[#1d8fcf] rounded-sm" />
+              <span className="block h-0.5 w-10 rounded-sm bg-linear-to-l from-transparent to-[#38bdf8]" />
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-[#02123a]">
               Our Trusted <span className="text-[#1d8fcf]">Clients</span>

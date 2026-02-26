@@ -6,10 +6,10 @@
  */
 
 const STATS = [
-  { value: "2022",    label: "Established"         },
-  { value: "30K+",   label: "Pieces / Month"       },
-  { value: "70+",    label: "Machines Installed"   },
-  { value: "3,500",  label: "Sq.ft Floor Area"     },
+  { value: "4+",    label: "Years"         },
+  { value: "50+",   label: "Pieces / Month"       },
+  { value: "80+",    label: "Machines Installed"   },
+  { value: "5000",  label: "Sq.ft Floor Area"     },
 ];
 
 const STRENGTHS = [
@@ -79,11 +79,11 @@ const AboutUs = () => {
     <section id="about" className="relative w-full py-20 overflow-hidden bg-[#f8faff]">
       {/* Background blobs */}
       <div
-        className="pointer-events-none absolute -top-24 -left-24 w-[420px] h-[420px] rounded-full"
+        className="pointer-events-none absolute -top-24 -left-24 w-105 h-105 rounded-full"
         style={{ background: "radial-gradient(circle, rgba(29,143,207,0.07) 0%, transparent 70%)" }}
       />
       <div
-        className="pointer-events-none absolute bottom-0 -right-16 w-[360px] h-[360px] rounded-full"
+        className="pointer-events-none absolute bottom-0 -right-16 w-90 h-90 rounded-full"
         style={{ background: "radial-gradient(circle, rgba(10,85,160,0.06) 0%, transparent 70%)" }}
       />
 
@@ -92,9 +92,9 @@ const AboutUs = () => {
         {/* ── Section Heading ── */}
         <div className="mb-14 text-center">
           <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-0.5 w-10 bg-[#1d8fcf] rounded-sm" />
+            <span className="block h-0.5 w-10 rounded-sm bg-linear-to-r from-transparent to-[#38bdf8]" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#1d8fcf]">Who We Are</span>
-            <span className="h-0.5 w-10 bg-[#1d8fcf] rounded-sm" />
+            <span className="block h-0.5 w-10 rounded-sm bg-linear-to-l from-transparent to-[#38bdf8]" />
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-[#02123a]">
             About <span className="text-[#1d8fcf]">Nilatex Garments</span>
